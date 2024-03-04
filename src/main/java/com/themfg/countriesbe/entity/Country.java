@@ -1,10 +1,7 @@
 package com.themfg.countriesbe.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.List;
 
@@ -13,27 +10,25 @@ import java.util.List;
 @Table
 @Getter
 @Setter
+@Builder        //halihazırda içerisinde bulunduğu sınıfın bütün değişkenlerini builder framework'ü ile kurgulayıp geri döndürülmesini sağlar
+@AllArgsConstructor
+@NoArgsConstructor
 public class Country {
     @Id
-    private String id;
+    @GeneratedValue
+    @Column(unique = true)
+    private Long id;
 
-
+    @Column(unique = true)
+    private String code;
     private String name;
-
-
     private String nativeName;
-
-
-    private int phone ;
-
-
+    private int phone;
     private String capital;
-
-
     private String continent;
-
-
     private String currency;
+    private String language;
+    private String flag;
 
 
     //private List<Language> languages;
