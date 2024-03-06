@@ -11,5 +11,6 @@ public class Api {
         public static final String BASE_URL = "/country";
 
         public static final String INSERT_ALL = "/insert_all";
+
     }
 }
