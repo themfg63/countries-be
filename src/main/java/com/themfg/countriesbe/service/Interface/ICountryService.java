@@ -7,4 +7,6 @@ import java.util.List;
 public interface ICountryService {
     List<Country> getAllCountries();
     List<Country> insertCountries();
+
+    Country insertCountry(Country country);
 }
